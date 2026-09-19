@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoul Food - Thực Đơn Hàn Quốc</title>
+    <style>
+        /* Reset CSS cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Tông màu chủ đạo: Đỏ tươi, Nền xám nhạt */
+        body {
+            background-color: #411e1e;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Thanh tiêu đề */
+        header {
+            background-color: #6f1919; /* Màu đỏ tươi */
+            color: rgb(248, 245, 245);
+            text-align: center;
+            padding: 25px 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 16px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Container chứa nội dung */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            color: #832a2a;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        /* Gạch chân dưới tiêu đề */
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: #fffbfb;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Danh sách món ăn - Dùng Flexbox */
+        .menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Khung từng món ăn (Card) */
+        .menu-item {
+            background-color: #ffffff;
+            border: 1px solid #b14242;
+            border-radius: 8px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-content {
+            padding: 15px;
+        }
+
+        .item-title {
+            font-size: 20px;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            font-size: 18px;
+            color: #890f0f;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Nút đặt món */
+        .btn-order {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #730808;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn-order:hover {
+            background-color: #930404;
+        }
+
+        /* Footer / Chân trang */
+        footer {
+            background-color: #6c0303;
+            color: rgb(237, 217, 217);
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive đơn giản cho điện thoại */
+        @media (max-width: 600px) {
+            .menu-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Đầu trang -->
+    <header>
+        <h1>SEOUL FOOD</h1>
+        <p>Ẩm thực Hàn Quốc đậm đà chuẩn vị</p>
+    </header>
+
+    <!-- Thân trang -->
+    <div class="container">
+        <h2 class="section-title">THỰC ĐƠN NỔI BẬT</h2>
+
+        <div class="menu-list">
+            
+            <!-- Món 1: Kimchi -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1583224964978-2257b960c3d3?w=500" alt="Kimchi Hàn Quốc">
+                <div class="menu-content">
+                    <h3 class="item-title">Kimchi Cải Thảo</h3>
+                    <p class="item-price">45.000 VNĐ</p>
+                    <p class="item-desc">Kimchi cải thảo muối xổi truyền thống, chua cay vừa tới, giòn rụm đậm vị Hàn Quốc.</p>
+                    <button class="btn-order">Đặt Món</button>
+                </div>
+            </div>
+
+            <!-- Món 2: Kimbap -->
+            <div class="menu-item">
+                <img src="kimbapp.jpg" alt="Kimbap Hàn Quốc">
+                <div class="menu-content">
+                    <h3 class="item-title">Kimbap Truyền Thống</h3>
+                    <p class="item-price">60.000 VNĐ</p>
+                    <p class="item-desc">Cơm cuộn lá rong biển nhân trứng, củ cải vàng, xúc xích, thanh cua và rau củ tươi.</p>
+                    <button class="btn-order">Đặt Món</button>
+                </div>
+            </div>
+
+            <!-- Món 3: Bibimbap -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1553163147-622ab57be1c7?w=500" alt="Bibimbap Hàn Quốc">
+                <div class="menu-content">
+                    <h3 class="item-title">Bibimbap (Cơm Trộn)</h3>
+                    <p class="item-price">85.000 VNĐ</p>
+                    <p class="item-desc">Cơm trộn thố đá nóng gồm bò băm, trứng ốp la, rau củ và sốt Gochujang đặc chế.</p>
+                    <button class="btn-order">Đặt Món</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p><strong>Quán Ăn Hàn Quốc - Seoul Food</strong></p>
+        <p>Địa chỉ: 123 Đường Hàn Quốc, Cầu Giấy, Hà Nội</p>
+        <p>Hotline đặt bàn: 0909 123 456</p>
+    </footer>
+
+</body>
+</html>
